@@ -11,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
       rel="stylesheet" />
       <link rel="stylesheet" href="style.css">
-    <title>Asa_RemoveBG</title>
+    <title>Document</title>
   </head>
   <body>
     <div class="wrapper">
@@ -48,7 +48,7 @@
             </div>
           </form>
           <img src="" id="result" alt="" />
-          
+          <a href="" download="" id="resultl" style="display:none">DOWNLOAD</a>
         </main>
     <footer>
 
@@ -60,6 +60,7 @@
           const input = document.getElementById("input");
           const button = document.getElementById("button");
           const result = document.getElementById("result");
+          const resultl = document.getElementById("resultl");
     
           form.addEventListener("submit", (e) => {
             e.preventDefault();
@@ -81,13 +82,15 @@
               .then((data) => {
                 const url = URL.createObjectURL(data);
                 result.src = url;
-    
+                resultl.href = url;
+                resultl.download = url;
+                resultl.download = "AsaRemove";
+                resultl.style.display = "block";
                 button.disabled = false;
                 button.textContent = "Remove";
               });
           });
         </script>
-      <p>Klik kanan Simpan Gambar</p>
       </body>
     </html>
         </html>
